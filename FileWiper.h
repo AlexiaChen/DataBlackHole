@@ -1,7 +1,5 @@
-#ifndef FILE_WIPER_H
+﻿#ifndef FILE_WIPER_H
 #define FILE_WIPER_H
-
-#include <string>
 
 #ifdef FILEWIPER_EXPORTS
 #define WIPER_API __declspec(dllexport)
@@ -23,21 +21,18 @@ public:
 			ZEROES,
 			PSEUDO_RANDOM,
 			DOD5220_22M,
-			DOD5200_28STD,
 			PETER_GUTMANN
 		};
 
 
 public:
 		FileWiper();
-		FileWiper(const std::string &file, WipeMode mode = DOD5220_22M);
+		FileWiper(const char* file, WipeMode mode = DOD5220_22M);
 		~FileWiper();
 
-		bool isValid() const;
-
-		void setFile(const std::string &file);
+       void setFile(const char* file);
 		void setWipeMode(WipeMode mode);
-		void start();
+		bool start();
 
 
 private:

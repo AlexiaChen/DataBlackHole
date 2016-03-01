@@ -5,6 +5,8 @@ VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "FileWiper", "FileWiper.vcxproj", "{055FB3BB-CB55-47D5-B01F-3DDB372EF654}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "FileWiperTest", "FileWiperTest\FileWiperTest.vcxproj", "{03850ACD-BD68-4703-B9D7-FEE16DE45B93}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Mixed Platforms = Debug|Mixed Platforms
@@ -27,6 +29,17 @@ Global
 		{055FB3BB-CB55-47D5-B01F-3DDB372EF654}.Release|Win32.Build.0 = Release|Win32
 		{055FB3BB-CB55-47D5-B01F-3DDB372EF654}.Release|x64.ActiveCfg = Release|x64
 		{055FB3BB-CB55-47D5-B01F-3DDB372EF654}.Release|x64.Build.0 = Release|x64
+		{03850ACD-BD68-4703-B9D7-FEE16DE45B93}.Debug|Mixed Platforms.ActiveCfg = Debug|Win32
+		{03850ACD-BD68-4703-B9D7-FEE16DE45B93}.Debug|Mixed Platforms.Build.0 = Debug|Win32
+		{03850ACD-BD68-4703-B9D7-FEE16DE45B93}.Debug|Win32.ActiveCfg = Debug|Win32
+		{03850ACD-BD68-4703-B9D7-FEE16DE45B93}.Debug|Win32.Build.0 = Debug|Win32
+		{03850ACD-BD68-4703-B9D7-FEE16DE45B93}.Debug|x64.ActiveCfg = Debug|x64
+		{03850ACD-BD68-4703-B9D7-FEE16DE45B93}.Debug|x64.Build.0 = Debug|x64
+		{03850ACD-BD68-4703-B9D7-FEE16DE45B93}.Release|Mixed Platforms.ActiveCfg = Release|Win32
+		{03850ACD-BD68-4703-B9D7-FEE16DE45B93}.Release|Mixed Platforms.Build.0 = Release|Win32
+		{03850ACD-BD68-4703-B9D7-FEE16DE45B93}.Release|Win32.ActiveCfg = Release|Win32
+		{03850ACD-BD68-4703-B9D7-FEE16DE45B93}.Release|Win32.Build.0 = Release|Win32
+		{03850ACD-BD68-4703-B9D7-FEE16DE45B93}.Release|x64.ActiveCfg = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
