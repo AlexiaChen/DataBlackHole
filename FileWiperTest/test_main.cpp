@@ -3,11 +3,19 @@
 
 int main()
 {
-	FileWiper wiper("C:/Users/MathxH/Desktop/wipertest/test.dat", FileWiper::WipeMode::ZEROES);
+	FileWiper wiper_zero("C:/Users/MathxH/Desktop/wipertest/test.dat", FileWiper::WipeMode::ZEROES);
 
-	if (!wiper.start())
+	if (!wiper_zero.start())
 	{
-		std::cout << "process failed" << std::endl;
+		std::cout << " zeros process failed" << std::endl;
+	}
+
+	wiper_zero.setFile("C:/Users/MathxH/Desktop/wipertest/test.dat");
+	wiper_zero.setWipeMode(FileWiper::WipeMode::PSEUDO_RANDOM);
+
+	if (!wiper_zero.start())
+	{
+		std::cout << " pseudo random process failed" << std::endl;
 	}
 	
 	return 0;

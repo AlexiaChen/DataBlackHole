@@ -42,15 +42,14 @@ public:
 	size_t getFileSize()
 	{
 		size_t fileSize;
-		
 		FILE *fp = nullptr;
-		
+#ifdef WIN32
 		errno_t err = fopen_s(&fp, m_file.c_str(), "rb");
-		if (err != 0) {
-			
-			return -1;
-		}
-		
+		if (err != 0) return 0;
+#elif __linux__
+		FILE *fp = fopen(m_file.c_str(), "rb");
+		if (fp == nullptr) return 0;
+#endif
 		fseek(fp, 0, SEEK_END);
 		fileSize = ftell(fp);
 		
@@ -61,8 +60,13 @@ public:
 
 	bool openFile()
 	{
+#ifdef WIN32
 		errno_t err = fopen_s(&m_fp, m_file.c_str(), "wb");
 		if (err != 0) return false;
+#elif __linux__
+		m_fp = fopen(m_file.c_str(), "rb");
+		if (m_fp == nullptr) return false;
+#endif
 		return true;
     }
 
@@ -105,7 +109,7 @@ public:
 
 		std::random_device rd;
 		
-		for (int i = 0; i < len; ++i) {
+		for (size_t i = 0; i < len; ++i) {
 			buffer[i] = alphaBet[rd() % (sizeof(alphaBet) - 1)];
 		}
 
