@@ -1,6 +1,11 @@
 # FileWipeLib
 This Library is for file wiping. It could guarantee your screte data be restored and it support 4 kinds of file shredding algorithms <br/>
 
+#Support Platform
+Windows </br>
+Linux    </br>
+Mac OSX   </br>
+
 #Support Algorithms
 <a>Zero Pattern </a>     Wipe Speed:Very Fast</br>
 <a>Pseudo random Pattern</a>     Wipe Speed:Fast</br>
