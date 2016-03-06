@@ -255,14 +255,11 @@ public:
 };
 
 
-FileWiper::FileWiper()
-{
-	m_impl = new WipeImpl();
-}
+FileWiper::FileWiper() :m_impl(new WipeImpl()){}
 
-FileWiper::FileWiper(const char* file, WipeMode mode)
+FileWiper::FileWiper(const char* file, WipeMode mode):
+m_impl(new WipeImpl())
 {
-	m_impl = new WipeImpl();
 	m_impl->m_file.assign(file);
 	m_impl->m_mode = mode;
 }
@@ -277,7 +274,7 @@ void FileWiper::setFile(const char* file)
 	m_impl->m_file.assign(file);
 }
 
-void FileWiper::setWipeMode(WipeMode mode)
+void FileWiper::setMode(WipeMode mode)
 {
 	m_impl->m_mode = mode;
 }

@@ -30,8 +30,8 @@ public:
 		FileWiper(const char* file, WipeMode mode = DOD5220_22M);
 		~FileWiper();
 
-       void setFile(const char* file);
-		void setWipeMode(WipeMode mode);
+		void setFile(const char* file);
+		void setMode(WipeMode mode);
 		bool start();
 
 
