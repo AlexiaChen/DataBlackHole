@@ -1,13 +1,17 @@
 ﻿#ifndef FILE_WIPER_H
 #define FILE_WIPER_H
 
+#ifdef WIN32
 #ifdef FILEWIPER_EXPORTS
 #define WIPER_API __declspec(dllexport)
 #else
 #define WIPER_API __declspec(dllimport)
 #endif
+#endif
 
-
+#ifdef __linux__
+#define WIPER_API
+#endif
 
 #ifdef __cplusplus
 extern "C" {
