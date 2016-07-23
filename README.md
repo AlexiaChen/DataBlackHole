@@ -1,5 +1,5 @@
 # FileWipeLib
-This Library is for file wiping. It could guarantee your screte data be restored and it support 4 kinds of file shredding algorithms <br/>
+This Library is for file wiping. It could guarantee your screte data cannot be restored and it support 4 kinds of file shredding algorithms <br/>
 
 #Support Platform
 Windows </br>
