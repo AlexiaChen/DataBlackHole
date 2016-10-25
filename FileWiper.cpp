@@ -78,17 +78,7 @@ public:
 
 	bool RenameAnddeleteFile()
 	{
-		if (rename(m_file.c_str(), "C"))
-		{
-			return false;
-		}
-		
-		if (remove("C"))
-		{
-			return false;
-		}
-
-		return true;
+		return (rename(m_file.c_str(), "C") && remove("C"));
 	}
 
 	void wipe(unsigned char c, size_t filesize)
@@ -118,10 +108,7 @@ public:
 	bool zeroes()
 	{
 		
-		if (!openFile())
-		{
-			return false;
-		}
+		if (!openFile()) return false;
 		
 		size_t file_size = getFileSize();
 		
@@ -140,22 +127,14 @@ public:
 		
 		closeFile();
 
-		if (!RenameAnddeleteFile())
-		{
-			return false;
-		}
-		
-		return true;
+		return RenameAnddeleteFile();
 
 	}
 	
 	bool dod5220_22M()
 	{
-		if (!openFile())
-		{
-			return false;
-		}
-
+		if (!openFile()) return false;
+		
 		size_t file_size = getFileSize();
 
 		if (file_size <= 0)
@@ -176,21 +155,13 @@ public:
 
 		closeFile();
 		
-		if (!RenameAnddeleteFile())
-		{
-			return false;
-		}
-
-		return true;
+		return RenameAnddeleteFile();
 	}
 	
 	bool psedoRandom()
 	{ 
-		if (!openFile())
-		{
-			return false;
-		}
-
+		if (!openFile()) return false;
+		
 		size_t file_size = getFileSize();
 		if (file_size <= 0)
 		{
@@ -207,22 +178,14 @@ public:
 		
 		closeFile();
 		
-		if (!RenameAnddeleteFile())
-		{
-			return false;
-		}
-
-		return true;
+		return RenameAnddeleteFile();
 	}
 	
 	
 	bool peterGutMann()
 	{
-		if (!openFile())
-		{
-			return false;
-		}
-
+		if (!openFile()) return false;
+		
 		size_t file_size = getFileSize();
 		if (file_size <= 0)
 		{
@@ -242,15 +205,11 @@ public:
 		
 		closeFile();
 		
-		if (!RenameAnddeleteFile())
-		{
-			delete pRandomBuff;
-			return false;
-		}
+		bool bRet = RenameAnddeleteFile();
 
 		delete pRandomBuff;
 
-		return true;
+		return bRet;
 	}
 };
 
@@ -282,7 +241,7 @@ void FileWiper::setMode(WipeMode mode)
 bool FileWiper::start()
 {
 	
-	bool ret;
+	bool ret = false;
 	
 	switch (m_impl->m_mode)
 	{
