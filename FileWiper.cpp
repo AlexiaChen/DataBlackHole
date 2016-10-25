@@ -204,12 +204,9 @@ public:
 		}
 		
 		closeFile();
-		
-		bool bRet = RenameAnddeleteFile();
-
 		delete pRandomBuff;
 
-		return bRet;
+		return RenameAnddeleteFile();
 	}
 };
 
